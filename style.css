@@ -1,0 +1,230 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+:root {
+    /* Primary colors  */
+    --clr-neutral-orange: hsl(31, 77%, 52%);
+    --clr-dark-cyan: hsl(179, 100%, 13%);
+    --clr-light-cyan: hsl(184, 100%, 22%);
+    /* Secondary colors */
+
+    --clr-light-white: hsla(0, 0%, 100%, 0.75);
+    --clr-light-grey: hsl(0, 0%, 95%);
+}
+
+
+body {
+    background-color: var(--clr-light-grey);
+    font-family: "Lexend Deca", serif;
+    font-weight: 400;
+    font-size: 0.938rem;
+    color: var(--clr-light-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+
+
+}
+
+/* Typography */
+
+.preview__title {
+    font-family: "Big Shoulders Display", serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.preview__body {
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+
+}
+
+.orange--col {
+    background-color: var(--clr-neutral-orange);
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+}
+
+.dark--cyan--col {
+    background-color: var(--clr-dark-cyan);
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+}
+
+.light--cyan--col {
+    background-color: var(--clr-light-cyan)
+}
+
+.orange--btn {
+    color: var(--clr-neutral-orange)
+}
+
+.light--cyan--btn {
+    color: var(--clr-light-cyan)
+}
+
+.dark--cyan--btn {
+    color: var(--clr-dark-cyan)
+}
+
+.preview__btn:hover,
+.preview__btn:focus,
+.preview__btn:active {
+    background-color: inherit;
+    color: var(--clr-light-white);
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+/* Layout */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+
+}
+
+.preview-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+}
+
+.preview-col {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.5em;
+
+}
+
+
+.preview__icon {
+    max-width: 30%;
+
+}
+
+.preview__btn {
+    padding: 1em 2em;
+    border-radius: 2em;
+    border: none;
+    font-size: 0.8rem;
+    transition: 0.3s ease-in;
+    align-self: flex-start
+}
+
+
+
+
+@media (min-width:600px) {
+
+    .preview-col {
+
+        flex: 1 1 0;
+        min-height: 100%
+    }
+
+    .preview__body {
+        font-size: 0.8rem;
+
+    }
+
+    .preview-container {
+        max-width: 950px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch
+    }
+
+
+
+    .orange--col {
+        border-top-left-radius: 0.5em;
+        border-bottom-left-radius: 0.5em;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .dark--cyan--col {
+        background-color: var(--clr-dark-cyan);
+        border-top-right-radius: 0.5em;
+        border-bottom-right-radius: 0.5em;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .preview__btn {
+        font-size: 0.8rem;
+        margin-top: auto
+    }
+
+}
